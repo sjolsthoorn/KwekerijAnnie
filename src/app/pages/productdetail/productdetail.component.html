@@ -1,0 +1,18 @@
+<div class="product-container">
+  <div class="product-image">
+    <img src="{{product?.photoUrl}}" alt="Aardbijen" />
+  </div>
+  <div class="product-details">
+    <h2>{{product?.name}}</h2>
+    <button mat-button>Terug</button>
+    <p>
+      {{product?.description}}
+    </p>
+    <div class="specifications-table">
+      <div class="detail">Hoogte: {{product?.height}}</div>
+      <div class="detail">Diameter: {{product?.diameter}}</div>
+      <div class="detail">Water vereiste: {{product?.wateringNeeds}}</div>
+      <div class="detail">Zon vereiste: {{product?.standingPlace}}</div>
+    </div>
+  </div>
+</div>

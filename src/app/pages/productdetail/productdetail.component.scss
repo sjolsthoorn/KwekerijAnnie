@@ -1,0 +1,81 @@
+.product-container {
+  display: flex;
+  background-color: #d4e4cb;  // Light green background (similar to your divider)
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+
+  button {
+    display: inline;
+    float: right;
+    color: black;
+  }
+  .product-image {
+    flex: 1;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .product-details {
+    flex: 2;
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);  // Light translucent white background
+    padding: 20px;
+    border-radius: 10px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 15px;
+      display: inline;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+  }
+
+  .product-specifications {
+      margin-left: 20px;
+      background-color: rgba(255, 255, 255, 0.8);  // Light translucent white background
+      padding: 10px;
+      border-radius: 10px;
+  }
+
+  .specifications-table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns
+    grid-template-rows: repeat(2, 1fr);    // Two rows
+    gap: 10px; // Space between grid items
+    width: 100%;
+    align-items: center;
+
+    .detail {
+      display: flex;
+      flex-direction: column; // Align content vertically inside each grid item
+      justify-content: center;
+      align-items: left;
+      background-color: #d4e4cb;
+      border-radius: 4px;
+      padding: 10px;
+      text-align: center;
+      min-height: 10px; // Optional: to ensure all cells are equal in height
+
+      i {
+        margin-bottom: 5px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}

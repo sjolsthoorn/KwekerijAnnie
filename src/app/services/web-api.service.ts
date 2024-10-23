@@ -10,6 +10,10 @@ export class WebApiService {
   constructor(private client: ProductsClient) {}
 
   getProducts(pageNumber: number): Observable<PageOfProducts> {
-    return this.client.getProducts(4, pageNumber, null, null, null, null, null, null)
+    return this.client.getProducts(4, pageNumber, null, null, null, null, null, null);
+  }
+
+  getProductById(productId: number) {
+    return this.client.getProductById(productId);
   }
 }
