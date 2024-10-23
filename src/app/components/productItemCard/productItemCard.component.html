@@ -1,0 +1,35 @@
+<div class="product-card">
+  <img [src]="imageUrl" alt="{{ title }}" class="product-image" />
+  <div class="product-info">
+    <div class="product-header">
+      <h3>{{ title }}</h3>
+      <span class="price">€{{ price | number: '1.2-2' }}</span>
+    </div>
+    <div class="product-details">
+      <div class="detail"
+      matTooltip="Diameter"
+      matTooltipShowDelay="500">
+        <i class="icon-size"></i>
+        <span><b>Ø</b> {{ size }}</span>
+      </div>
+      <div class="detail"
+      matTooltip="Hoogte in centimeter"
+      matTooltipShowDelay="500">
+        <i class="icon-height"></i>
+        <span><fa-icon [icon]="faHeight"></fa-icon> {{ height }}mm</span>
+      </div>
+      <div class="detail"
+      matTooltip="Water behoefte"
+      matTooltipShowDelay="500">
+        <i class="icon-watering"></i>
+        <span><fa-icon [icon]="faWater"></fa-icon> {{ waterLevel }}</span>
+      </div>
+      <div class="detail"
+      matTooltip="Zonnen behoefte"
+      matTooltipShowDelay="500">
+        <i class="icon-settings"></i>
+        <span><fa-icon [icon]="faSun"></fa-icon> {{ maintenanceLevel }}</span>
+      </div>
+    </div>
+  </div>
+</div>
