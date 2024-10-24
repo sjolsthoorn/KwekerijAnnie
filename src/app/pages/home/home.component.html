@@ -23,13 +23,12 @@
   </div>
   <div class="filterOption">
     <label>Standplaats</label>
-    <select [(ngModel)]="searchFilterParams.standplaats" multiple>
+    <select [(ngModel)]="searchFilterParams.standingPlace" multiple>
       <option *ngFor="let place of standingPlaceEnumKeys" [value]="place">{{ place }}</option>
     </select>
   </div>
   <button (click)="search()">Zoeken</button>
 </div>
-
 
 <div class="product-grid">
   <app-product-item-card

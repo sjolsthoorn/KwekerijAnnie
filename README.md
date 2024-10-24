@@ -1,27 +1,25 @@
-# Annie
+# Kwekerij Annie
+### Gemaakt voor jem-id
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+Voor dit project gebruik ik Angular17.1.2.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Voor je de server draait, voer eerst `npm install` uit om alle vereiste packages te downloaden.
 
-## Code scaffolding
+Draai `ng serve --port 3000` om de dev server starten op port 3000, de port verandering is nodig voor het ophalen van de product gegevens.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Packages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Naast de gebruikelijke Angular componenten gebruik ik de volgende packages:
+- FontAwesome
+- Angular Material
 
-## Running unit tests
+## Notities
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Naast de requirements wou ik nog extras toevoegen die ik uiteindelijk niet hebt kunnen toevoegen. De volgende functies stond nog op de planning
+- Skeleton loader 
+- Slide animatie tussen overzicht en detail pagina
+- Rxjs state management store
+- Lazy loading / Infinite scrolling

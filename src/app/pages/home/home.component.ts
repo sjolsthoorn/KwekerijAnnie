@@ -10,7 +10,7 @@ import { Product, StandingPlace } from '../../api-client';
 export class HomeComponent implements OnInit {
   products: Product[] = [];
   currentPage = 0;
-  loading = false;
+  loading = false; // Toevoegd om een loading lock te voorkomen.
   maxPagesReached = false;
 
   standingPlaceEnumKeys = Object.keys(StandingPlace);
@@ -31,9 +31,8 @@ export class HomeComponent implements OnInit {
     this.webApi.getProducts(this.currentPage).subscribe(newProducts => {
       if (newProducts.products.length > 0) {
         this.products = [...this.products, ...newProducts.products];
-        this.currentPage++;
+        this.currentPage++; // Loopt door pages tot de producten array leeg is.
       } else {
-        console.log('No more products!');
         this.maxPagesReached = true;
       }
       this.loading = false;
