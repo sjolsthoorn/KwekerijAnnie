@@ -15,14 +15,14 @@ export class ProductItemCardComponent {
 
   constructor(private router: Router) {}
 
-  @Input() imageUrl: string = "https://images.unsplash.com/photo-1549007953-2f2dc0b24019?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  @Input() title: string = "Strawberry";
-  @Input() price: number = 193;
-  @Input() size: number = 839;
-  @Input() height: number = 12;
-  @Input() waterLevel: string = "High";
-  @Input() maintenanceLevel: string = "Low";
-  @Input() productId: number = 1;
+  @Input() imageUrl?: string;
+  @Input() title?: string;
+  @Input() price?: number;
+  @Input() size?: number;
+  @Input() height?: number;
+  @Input() waterLevel?: string;
+  @Input() maintenanceLevel?: string;
+  @Input() productId?: number = 1;
 
   navigateToDetailPage() {
     this.router.navigate([`/product/${this.productId}`]);

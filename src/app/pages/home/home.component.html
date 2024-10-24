@@ -1,29 +1,29 @@
 <div class="filterBar">
   <div class="filterOption">
-    <input type="text" placeholder="Zoekterm" [(ngModel)]="textQuery">
+    <input type="text" placeholder="Zoekterm" [(ngModel)]="searchFilterParams.textQuery">
   </div>
   <div class="filterOption">
     <label>Hoogte (Min)</label>
-    <input type="number" [(ngModel)]="minHeight" placeholder="Min hoogte">
+    <input type="number" [(ngModel)]="searchFilterParams.minHeight" placeholder="Min hoogte">
   </div>
 
   <div class="filterOption">
     <label>Hoogte (Max)</label>
-    <input type="number" [(ngModel)]="maxHeight" placeholder="Max hoogte">
+    <input type="number" [(ngModel)]="searchFilterParams.maxHeight" placeholder="Max hoogte">
   </div>
 
   <div class="filterOption">
     <label>Diameter (Min)</label>
-    <input type="number" [(ngModel)]="minDiameter" placeholder="Min diameter">
+    <input type="number" [(ngModel)]="searchFilterParams.minDiameter" placeholder="Min diameter">
   </div>
 
   <div class="filterOption">
     <label>Diameter (Max)</label>
-    <input type="number" [(ngModel)]="maxDiameter" placeholder="Max diameter">
+    <input type="number" [(ngModel)]="searchFilterParams.maxDiameter" placeholder="Max diameter">
   </div>
   <div class="filterOption">
     <label>Standplaats</label>
-    <select [(ngModel)]="StandingPlace" multiple>
+    <select [(ngModel)]="searchFilterParams.standplaats" multiple>
       <option *ngFor="let place of standingPlaceEnumKeys" [value]="place">{{ place }}</option>
     </select>
   </div>

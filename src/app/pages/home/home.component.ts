@@ -14,13 +14,7 @@ export class HomeComponent implements OnInit {
   maxPagesReached = false;
 
   standingPlaceEnumKeys = Object.keys(StandingPlace);
-
-  textQuery?: string;
-  minHeight?: number;
-  maxHeight?: number;
-  minDiameter?: number;
-  maxDiameter?: number;
-  StandingPlace?: StandingPlace[];
+  searchFilterParams: filterOptions = {};
 
   @ViewChild('scrollAnchor', { static: true }) scrollAnchor!: ElementRef;
 
@@ -29,7 +23,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
   }
-
 
   loadProducts(): void {
     if (this.loading || this.maxPagesReached) return;
@@ -48,11 +41,8 @@ export class HomeComponent implements OnInit {
   }
 
   search() {
-    const params: filterOptions = {
-
-    };
-
-    this.webApi.getProducts(this.currentPage, params).subscribe(newProducts => {
+    console.log(this.searchFilterParams);
+    this.webApi.getProducts(0, this.searchFilterParams).subscribe(newProducts => {
       this.products = newProducts.products;
     });
   }

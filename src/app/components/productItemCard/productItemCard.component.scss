@@ -41,22 +41,21 @@
 
     .product-details {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); // Two columns
-      grid-template-rows: repeat(2, 1fr);    // Two rows
-      gap: 10px; // Space between grid items
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
       width: 100%;
       align-items: center;
 
       .detail {
         display: flex;
-        flex-direction: column; // Align content vertically inside each grid item
+        flex-direction: column;
         justify-content: center;
-        align-items: left;
         background-color: #9EBD8F;
         border-radius: 4px;
         padding: 10px;
         text-align: center;
-        min-height: 10px; // Optional: to ensure all cells are equal in height
+        min-height: 10px;
 
         i {
           margin-bottom: 5px;
