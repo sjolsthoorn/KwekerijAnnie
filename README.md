@@ -1,7 +1,7 @@
 # Kwekerij Annie
 ### Gemaakt voor jem-id
 
-Voor dit project gebruik ik Angular17.1.2.
+Voor dit project gebruik ik Angular 17.1.2.
 
 ## Development server
 
