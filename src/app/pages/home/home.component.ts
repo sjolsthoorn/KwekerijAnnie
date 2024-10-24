@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { WebApiService } from '../../services/web-api.service';
-import { Product } from '../../api-client';
+import { filterOptions, WebApiService } from '../../services/web-api.service';
+import { Product, StandingPlace } from '../../api-client';
 
 @Component({
   selector: 'page-home',
@@ -13,39 +13,23 @@ export class HomeComponent implements OnInit {
   loading = false;
   maxPagesReached = false;
 
+  standingPlaceEnumKeys = Object.keys(StandingPlace);
+
+  textQuery?: string;
+  minHeight?: number;
+  maxHeight?: number;
+  minDiameter?: number;
+  maxDiameter?: number;
+  StandingPlace?: StandingPlace[];
+
   @ViewChild('scrollAnchor', { static: true }) scrollAnchor!: ElementRef;
 
   constructor(private readonly webApi: WebApiService) {}
 
   ngOnInit(): void {
-    this.loadInitialProducts();
-    this.setupIntersectionObserver();
+    this.loadProducts();
   }
 
-  loadInitialProducts(): void {
-    this.loadUntilScrollable();
-  }
-
-  loadUntilScrollable(): void {
-    if (this.maxPagesReached || this.loading) return;
-
-    this.loading = true;
-    this.webApi.getProducts(this.currentPage).subscribe(newProducts => {
-      if (newProducts.products.length > 0) {
-        this.products = [...this.products, ...newProducts.products];
-        this.currentPage++;
-        this.loading = false;
-
-        if (!this.isPageScrollable()) {
-          this.loadUntilScrollable();
-        }
-      } else {
-        console.log('No more products!');
-        this.maxPagesReached = true;
-        this.loading = false;
-      }
-    });
-  }
 
   loadProducts(): void {
     if (this.loading || this.maxPagesReached) return;
@@ -63,17 +47,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  isPageScrollable(): boolean {
-    return document.documentElement.scrollHeight > document.documentElement.clientHeight;
-  }
+  search() {
+    const params: filterOptions = {
 
-  setupIntersectionObserver(): void {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !this.loading && !this.maxPagesReached) {
-        this.loadProducts();
-      }
+    };
+
+    this.webApi.getProducts(this.currentPage, params).subscribe(newProducts => {
+      this.products = newProducts.products;
     });
-
-    observer.observe(this.scrollAnchor.nativeElement);
   }
 }

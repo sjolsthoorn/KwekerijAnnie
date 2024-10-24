@@ -4,7 +4,7 @@
   </div>
   <div class="product-details">
     <h2>{{product?.name}}</h2>
-    <button mat-button>Terug</button>
+    <button mat-button (click)="navigateBack()">Terug</button>
     <p>
       {{product?.description}}
     </p>

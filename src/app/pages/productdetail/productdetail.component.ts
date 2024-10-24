@@ -19,13 +19,16 @@ export class ProductdetailComponent implements OnInit {
 
 constructor(private route: ActivatedRoute, private webApiService: WebApiService) {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.productId = +params['id'];
-    });
+ngOnInit(): void {
+  this.route.params.subscribe(params => {
+    this.productId = +params['id'];
+  });
+  this.webApiService.getProductById(this.productId).subscribe(product => {
+    this.product = product;
+  });
+}
 
-    this.webApiService.getProductById(this.productId).subscribe(product => {
-      this.product = product;
-    });
-  }
+navigateBack() {
+  window.history.back();
+}
 }

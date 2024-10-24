@@ -13,6 +13,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ProductdetailComponent } from './pages/productdetail/productdetail.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {MatIconModule} from '@angular/material/icon';
     FontAwesomeModule,
     MatTooltipModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
+
   ],
   providers: [WebApiService, ProductsClient],
   bootstrap: [AppComponent]
