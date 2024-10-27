@@ -21,5 +21,4 @@ Naast de gebruikelijke Angular componenten gebruik ik de volgende packages:
 Naast de requirements wou ik nog extras toevoegen die ik uiteindelijk niet hebt kunnen toevoegen. De volgende functies stond nog op de planning
 - Skeleton loader 
 - Slide animatie tussen overzicht en detail pagina
-- Rxjs state management store
 - Lazy loading / Infinite scrolling

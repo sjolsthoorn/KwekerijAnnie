@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PageOfProducts, ProductsClient, StandingPlace } from '../api-client';
+import { PageOfProducts, Product, ProductsClient, StandingPlace } from '../api-client';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -23,7 +23,7 @@ export class WebApiService {
   }
 
   // Voor de productdetail pagina
-  getProductById(productId: number) {
+  getProductById(productId: number): Observable<Product> {
     return this.client.getProductById(productId);
   }
 }

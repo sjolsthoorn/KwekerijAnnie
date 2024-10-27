@@ -39,10 +39,18 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  search() {
+  search(): void {
+    this.currentPage = 0;
+    this.maxPagesReached = false;
     console.log(this.searchFilterParams);
-    this.webApi.getProducts(0, this.searchFilterParams).subscribe(newProducts => {
-      this.products = newProducts.products;
-    });
+
+    this.webApi.getProducts(0, this.searchFilterParams).subscribe(
+      newProducts => {
+        this.products = newProducts.products;
+      },
+      error => {
+        console.error('Could not retrieve products or apply filters ', error)
+      }
+    );
   }
 }

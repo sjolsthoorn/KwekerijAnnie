@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import { Router } from '@angular/router';
 import { faWater, faUpDown, faSun } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,7 +21,7 @@ export class ProductItemCardComponent {
   @Input() height?: number;
   @Input() waterLevel?: string;
   @Input() maintenanceLevel?: string;
-  @Input() productId?: number = 1;
+  @Input() productId?: number;
 
   navigateToDetailPage() {
     this.router.navigate([`/product/${this.productId}`]);
